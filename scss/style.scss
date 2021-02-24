@@ -389,6 +389,9 @@ border: 3px solid $text_color;
 .action {
   background-color: $bg_blue_color;
   @include bg_pattern_light;
+  .row {
+    margin-right: 0;
+  }
   @media (max-width: 576px) {
     padding-bottom: 0;
   }

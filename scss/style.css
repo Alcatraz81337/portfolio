@@ -489,6 +489,10 @@ body {
   background-position: 0 0,30px 30px;
 }
 
+.action .row {
+  margin-right: 0;
+}
+
 @media (max-width: 576px) {
   .action {
     padding-bottom: 0;
