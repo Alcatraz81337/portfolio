@@ -156,6 +156,10 @@ body {
   align-items: center;
   margin-bottom: 3rem;
 }
+.plan-stage h4 {
+  margin: 0;
+  padding: 0;
+}
 @media (max-width: 576px) {
   .plan-stage {
     flex-direction: column;
