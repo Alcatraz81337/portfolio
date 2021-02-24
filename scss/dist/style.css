@@ -295,8 +295,12 @@ body {
   font-size: 1.125rem;
 }
 
+.works {
+  padding: 5rem;
+}
 @media (max-width: 576px) {
   .works {
+    padding: 3rem;
     justify-content: center;
   }
 }

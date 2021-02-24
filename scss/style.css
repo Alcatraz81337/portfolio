@@ -358,8 +358,13 @@ body {
   font-size: 1.125rem;
 }
 
+.works {
+  padding: 5rem;
+}
+
 @media (max-width: 576px) {
   .works {
+    padding: 3rem;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;

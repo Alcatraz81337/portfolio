@@ -314,7 +314,9 @@ border: 3px solid $text_color;
   @include text;
 }
 .works {
+  padding: 5rem;
   @media (max-width: 576px) {
+    padding: 3rem;
     justify-content: center;
   }
 }
