@@ -1,0 +1,526 @@
+* {
+  box-sizing: border-box;
+}
+
+$text_color: #112A46;
+
+$violet_color: #861FE0;
+$light_violet_color: #F8F2FD;
+$line_color: #501386;
+$link_hover_color: #6B19B3;
+
+$bg_blue_color: #ACC8E5;
+$light_bg_blue_color: #F3F7FB;
+$light_bg_hover: #D9E5F2;
+
+$dark_blue_color: #587DA8;
+$green_color: #25B371;
+$pink_color: #E84691;
+
+$work-sphere: #FFFFFF;
+
+
+@mixin border-radius {
+  border-radius: 50px;
+}
+
+@mixin thick_border_blue {
+  border: 6px solid $bg_blue_color;
+}
+@mixin thick_border_violet {
+  border: 6px solid $violet_color;
+}
+@mixin thick_border_dark_blue {
+  border: 6px solid $dark_blue_color;
+}
+@mixin thick_border_green {
+  border: 6px solid $green_color;
+}
+@mixin thick_border_pink {
+  border: 6px solid $pink_color;
+}
+@mixin link_border {
+  border: 3px solid #F8F2FD;
+  border-radius: 10px;
+}
+
+@mixin bg_pattern {
+  background-color: #F3F7FB;
+  background-image:  radial-gradient(#ACC8E5 1.5px, transparent 1.5px), radial-gradient(#ACC8E5 1.5px, #F3F7FB 1.5px);
+  opacity: 1;
+  background-size: 60px 60px;
+  background-position: 0 0,30px 30px;
+}
+@mixin bg_pattern_light {
+  background-color: #ACC8E5;
+  background-image:  radial-gradient(#F3F7FB 1.5px, transparent 1.5px), radial-gradient(#F3F7FB 1.5px, #ACC8E5 1.5px);
+  opacity: 1;
+  background-size: 60px 60px;
+  background-position: 0 0,30px 30px;
+}
+
+@mixin title {
+  font-family: 'IBM Plex Serif',
+  serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+@mixin text {
+  font-family: 'IBM Plex Sans',
+  sans-serif;
+  line-height: 160%;
+  font-size: 1.125rem;
+}
+@mixin big_text {
+  font-family: 'IBM Plex Sans',
+  sans-serif;
+  font-size: 1.25rem;
+  line-height: 160%;
+}
+@mixin big_bold_text {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: bold;
+  line-height: 160%;
+  font-size: 1.25rem;
+}
+@mixin bold_text {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: bold;
+  line-height: 160%;
+  font-size: 1.125rem;
+}
+
+
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+p::selection,
+span::selection {
+  color: $light_violet_color;
+  background-color: $violet_color;
+}
+
+
+body {
+  font-family: 'IBM Plex Sans',
+  sans-serif;
+  color: $text_color;
+  background-color: #ACC8E5;
+}
+.hero {
+  @include bg_pattern;
+  @media (max-width: 576px) {
+    .container {
+      .title-block { order: 1;}
+      .description-block { 
+        order: 3;
+        margin-top: 2rem;
+      }
+      .hero-image { order: 2;}
+  }
+  }
+}
+.row {
+  --bs-gutter-x: 0;
+}
+.hero-hello {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.title-block {
+  background-color: $light_bg_blue_color;
+  @include thick_border_blue;
+  @include border-radius;
+}
+.hero-hello_title {
+  @include title;
+}
+.title-description {
+  background-color: $light_bg_blue_color;
+  max-width: 412px;
+  border-radius: 50px 50px 0px 0px;
+  @include thick_border_blue;
+  @include text;
+}
+.button {
+  width: 100%;
+  max-width: 412px;
+  text-align: center;
+  text-decoration: none;
+  background-color: $violet_color;
+  color: $light_violet_color;
+  border-radius: 0px 0px 50px 50px;
+  border: 6px solid $violet_color;
+  @include text;
+  &:hover {
+    background-color: $light_violet_color;
+    color: $violet_color;
+  }
+}
+.button-hover-on {
+  transition: 0.5s;
+}
+.button-hover-out {
+  transition: 0.5s;
+}
+.hero-image {
+  max-width: 588px;
+  max-height: 662px;
+border: 3px solid $text_color;
+@include border-radius;
+}
+.help {
+  background-color: $bg_blue_color;
+}
+.work-title,
+.portfolio-title,
+.plan-title,
+.help-title {
+  @include title;
+}
+.example {
+  flex-basis: 100%;
+  max-width: 588px;
+  border-radius: 0px 50px 50px 0px;
+  background-color: $light_bg_blue_color;
+  @media (max-width: 576px) {
+    margin-bottom: 2rem;
+    .example:last-child { margin-bottom: 0; }
+  }
+}
+.example-right {
+  border-radius:  50px 0px 0px 50px;
+  margin-left: auto;
+}
+
+.work-intro,
+.portfolio-text,
+.example-text {
+  @include text;
+}
+.plan {
+  background-color: $light_bg_blue_color;
+}
+.plan-stage {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 3rem;
+  @media (max-width: 576px) {
+    flex-direction: column;
+    .stage-number { 
+      order: 1;
+      margin-bottom: 1rem;
+    }
+    .stage-goal { 
+      order: 2; 
+      margin-bottom: 1rem;
+    }
+    .stage-text { 
+      order: 3;
+      margin-bottom: 2rem;
+    }
+    .plan-stage-4 {
+      margin-bottom: 0;
+      }
+    }
+  }
+.stage-goal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $light_bg_blue_color;
+  max-width: 280px;
+  @include thick_border_blue;
+  @include border-radius;
+  h4 {
+    @include bold_text;
+  }
+}
+.stage-goal-finished {
+  text-align: center;
+  color: $light_violet_color;
+  background-color: $violet_color;
+  @include thick_border_violet;
+}
+.stage-number {
+  vertical-align: top;
+  color: $light_violet_color;
+  background-color: $violet_color;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  @include big_bold_text;
+}
+.stage-text {
+  max-width: 600px;
+  justify-content: center;
+  p {
+    @include text;
+    margin: 0;
+    padding: 0;
+  }
+}
+.portfolio {
+  background-color: $bg_blue_color;
+}
+.portfolio-intro {
+  @media (max-width: 576px) {
+    flex-direction: column;
+    .disclaimer {
+      margin-top: 2rem;
+    }
+  }
+}
+.text-block {
+  max-width: 580px;
+}
+.disclaimer {
+  max-width: 590px;
+  background-color: $light_bg_blue_color;
+  @include border-radius;
+}
+.disclaimer-text {
+  @include bold_text;
+  @include border-radius;
+}
+.portfolio-section {
+  background-color: $light_bg_blue_color;
+  border-radius: 0px 50px 50px 0px;
+}
+.work-theme {
+  border-radius: 0px 50px 0px 0px;
+}
+.work-sphere {
+  color: $work-sphere;
+  @include title;
+}
+.all {
+  background-color: $dark_blue_color;
+}
+.texts {
+  background-color: $green_color;
+}
+.designs {
+  background-color: $pink_color;
+}
+.section-description {
+  max-width: 600px;
+  @include text;
+}
+.works {
+  @media (max-width: 576px) {
+    justify-content: center;
+  }
+}
+.work {
+  text-decoration: none;
+  color: $text_color;
+  flex-basis: 40%;
+  border-radius: 0px 0px 50px 50px;
+  @include thick_border_blue;
+  &:hover {
+    color: $text_color;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+}
+.work-up {
+  transition: 0.5s;
+  transform: translateY(-5%);
+}
+.work-down {
+  transition: 0.4s;
+  transform: translateY(0);
+}
+.all-work {
+  @include thick_border_dark_blue;
+}
+.texts-work {
+  @include thick_border_green;
+}
+.designs-work {
+  @include thick_border_pink;
+}
+.work-image {
+  max-width: 520px;
+  max-height: 320px;
+}
+.info-title,
+.write-me {
+  @include title;
+}
+.write-me-why {
+  @include text;
+}
+.main-info {
+  @include bg_pattern;
+  background-color: $bg_blue_color;
+}
+.info-blocks {
+  @media (max-width: 576px) {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+.info-block {
+  flex-basis: 40%;
+  background-color: $violet_color;
+  @include border-radius;
+  p {
+    color: $light_violet_color;
+    @include text;
+    &::selection {
+    background-color: $light_violet_color;
+    color: $violet_color;
+  }
+  }
+}
+.title-info-block {
+  background-color: $light_bg_blue_color;
+  max-width: 430px;
+}
+.action {
+  background-color: $bg_blue_color;
+  @include bg_pattern_light;
+  @media (max-width: 576px) {
+    padding-bottom: 0;
+  }
+}
+.action-text {
+  border-radius: 0px 50px 0px 0px;
+  background-color: $light_bg_blue_color;
+  @include thick_border_violet;
+  border-bottom: 0;
+}
+.contact {
+  background-color: $violet_color;
+  width: 100%;
+  p::selection {
+    background-color: $light_violet_color;
+    color: $violet_color;
+  }
+}
+.contact-title {
+  @include big_bold_text;
+  color: $light_violet_color;
+}
+
+.social-link {
+  @include link_border;
+  text-decoration: none;
+  background-color: $violet_color;
+  color: $light_violet_color;
+  span { @include text; }
+  .social-icon {
+    fill: $violet_color;
+    stroke: $light_violet_color;
+  }
+  &:hover {
+    transition: 0.2s;
+    background-color: $light_violet_color;
+    color: $violet_color;
+    .social-icon {
+    stroke: $violet_color;
+    fill: $light_violet_color;
+  }
+}
+animation: fadeInUp;
+}
+.email-link {
+  .social-icon {
+    vertical-align: middle;
+  }
+}
+
+
+
+/* Work presentations */
+
+
+
+
+.work-preview {
+  background-color: $light_bg_blue_color;
+  @include bg_pattern;
+}
+.work-description {
+  max-width: 588px;
+  @include thick_border_blue;
+  @include border-radius;
+  background-color: $light_bg_blue_color;
+  p {
+    @include text;
+  }
+}
+.work-photo {
+  @include thick_border_blue;
+  @include border-radius;
+  @media (max-width: 576px) {
+    margin-top: 2rem;
+  }
+}
+.action-work {
+  background-color: $light_bg_blue_color;
+  @include bg_pattern;
+}
+table {
+  @include text;
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid $violet_color;
+    color: $violet_color;
+    &:hover {
+      color: $link_hover_color;
+      border-bottom-color: $link_hover_color;
+    }
+  }
+}
+.stages {
+  position: relative;
+}
+.work-process {
+  background-color: $bg_blue_color;
+  h2 { @include title; } 
+  h3 { @include big_bold_text; }
+}
+.stage {
+  background-color: $light_bg_blue_color;
+  border-radius: 0px 50px 0px 0px;
+  max-width: 588px;
+  p { @include text; }
+  span { @include bold_text; }
+}
+.stage-title {
+  color: $work-sphere;
+  border-radius: 0px 50px 0px 0px;
+}
+.common {
+  color: $text_color;
+  background-color: $light_bg_blue_color;
+}
+.return {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-decoration: none;
+  color: $text_color;
+  background-color: $light_bg_blue_color;
+  @include text;
+  @include border-radius;
+  &:hover {
+    transition: 0.2s;
+    color: $text_color;
+    background-color: $light_bg_hover;
+    }
+  @media (max-width: 576px) {
+    position: relative;
+    margin-right: 0;
+  }
+}
