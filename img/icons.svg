@@ -30,4 +30,7 @@
     <path d="M4 12l12 8 12-8-12-8-12 8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     <path d="M28 12v13.333A2.667 2.667 0 0125.333 28H6.667A2.667 2.667 0 014 25.333V12m0 13.333l8-8m8 0l8 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="close">
+    <path d="M24 5.333H8A2.667 2.667 0 005.333 8v16A2.667 2.667 0 008 26.667h16A2.667 2.667 0 0026.667 24V8A2.667 2.667 0 0024 5.333zm-5.333 8l-5.334 5.334m0-5.334l5.334 5.334-5.334-5.334z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  </symbol>
 </svg>

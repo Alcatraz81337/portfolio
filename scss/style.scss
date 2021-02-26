@@ -450,7 +450,7 @@ animation: fadeInUp;
 
 /* Модальное окно */
 
-.modal { /* начальные стили */
+.modal-my { /* начальные стили */
   visibility: hidden; /* скрываем модальное окно */
   opacity: 0; /* делаем прозрачным */
   position: fixed; /* делаем блок фиксированным */
@@ -495,7 +495,6 @@ animation: fadeInUp;
   height: 100%;
   padding: 64px 24px;
   align-items: center;
-  text-align: center;
   color: $text_color;
   @include thick_border_blue;
   @include border-radius;
@@ -507,7 +506,6 @@ animation: fadeInUp;
   top: 16px;
   right: 16px;
   cursor: pointer;
-  @include text;
 }
 .modal__title {
   margin-bottom: 24px;
@@ -516,7 +514,9 @@ animation: fadeInUp;
 .modal__text {
   @include text;
 }
-
+.close-icon {
+  stroke: $bg_blue_color;
+}
 
 /* Work presentations */
 

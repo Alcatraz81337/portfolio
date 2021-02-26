@@ -53,20 +53,25 @@ new WOW().init();
 
 const openModal = (triggerSelector, modalDataSelector) => {
   // объявляем функцию открытия модального окна, которая принимает в качестве параметров селекторы кнопки и соответствующего модального окна
-  const trigger = document.querySelector(triggerSelector); // ищем кнопку по переданному селектору
+  const trigger = document.querySelectorAll(triggerSelector); // ищем кнопку по переданному селектору
+  const triggerLength = trigger.length;
   const modal = document.querySelector(modalDataSelector); // ищем модальное окно по переданному селектору
   if (!trigger || !modal) return; // если такая кнопка или модальное окно не найдены, то прекращаем работу функции
-  trigger.addEventListener("click", (e) => {
-    // при клике на кнопку
-    e.preventDefault(); // предотвращаем браузерные действия (если кнопка сделана через тег ссылки <a href=""></a>, то отменяется переход по ссылке)
-    modal.classList.add("modal_active"); // отображаем модальное окно, добавив ему активный класс
-  });
+  for (let i = 0; i <= triggerLength; i++) {
+    if (trigger[i] != undefined) {
+      trigger[i].addEventListener("click", (e) => {
+        // при клике на кнопку
+        e.preventDefault(); // предотвращаем браузерные действия (если кнопка сделана через тег ссылки <a href=""></a>, то отменяется переход по ссылке)
+        modal.classList.add("modal_active"); // отображаем модальное окно, добавив ему активный класс
+      });
+    }
+  }
 };
-openModal(".no_work", '.modal[data-modal="one"]'); // Запускаем функцию и передаем селекторы для первого модального окна
+openModal(".no_work", '.modal-my[data-modal="one"]'); // Запускаем функцию и передаем селекторы для первого модального окна
 
 const closeModal = () => {
   // объявляем функцию закрытия модального окна
-  const modals = document.querySelectorAll(".modal"); // ищем все модальные окна
+  const modals = document.querySelectorAll(".modal-my"); // ищем все модальные окна
   if (!modals) return; // если их нет, то прекращаем выполнение функции
   modals.forEach((el) => {
     // если есть, то для каждого из них
