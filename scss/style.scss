@@ -111,6 +111,31 @@ body {
   color: $text_color;
   background-color: #ACC8E5;
 }
+.navbar {
+  background-color: $violet_color;
+  span {
+    color: $light_violet_color;
+    @include text;
+  }
+  @media (max-width: 860px) {
+    display: none!important;
+  }
+}
+.nav-link {
+  text-decoration: underline;
+  color: $light_violet_color;
+  border-radius: 10px;
+  @include text;
+  &:hover {
+    color: $violet_color;
+    background-color: $light_violet_color;
+  }
+}
+.nav-item {
+  &:hover {
+    color: $light_violet_color;
+  }
+}
 .hero {
   @include bg_pattern;
   @media (max-width: 576px) {

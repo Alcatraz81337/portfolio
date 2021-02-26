@@ -19,6 +19,38 @@ body {
   background-color: #ACC8E5;
 }
 
+.navbar {
+  background-color: #861FE0;
+}
+.navbar span {
+  color: #F8F2FD;
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 160%;
+  font-size: 1.125rem;
+}
+@media (max-width: 860px) {
+  .navbar {
+    display: none !important;
+  }
+}
+
+.nav-link {
+  text-decoration: underline;
+  color: #F8F2FD;
+  border-radius: 10px;
+  font-family: "IBM Plex Sans", sans-serif;
+  line-height: 160%;
+  font-size: 1.125rem;
+}
+.nav-link:hover {
+  color: #861FE0;
+  background-color: #F8F2FD;
+}
+
+.nav-item:hover {
+  color: #F8F2FD;
+}
+
 .hero {
   background-color: #F3F7FB;
   background-image: radial-gradient(#ACC8E5 1.5px, transparent 1.5px), radial-gradient(#ACC8E5 1.5px, #F3F7FB 1.5px);
