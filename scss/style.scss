@@ -448,6 +448,74 @@ animation: fadeInUp;
   }
 }
 
+/* Модальное окно */
+
+.modal { /* начальные стили */
+  visibility: hidden; /* скрываем модальное окно */
+  opacity: 0; /* делаем прозрачным */
+  position: fixed; /* делаем блок фиксированным */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  background: rgba(17, 42, 70, 0.3); /* фон для затемнения */
+  z-index: 9999; /* перекрываем все элементы */
+  transition: visibility 0s 0.25s, opacity 0.25s; /* добавляем для плавного перехода */
+}
+.modal_active { /* активный класс модального окна */
+  opacity: 1; /* убираем прозрачность */
+  visibility: visible; /* отображаем блок модального окна */
+  transition: visibility 0s 0s, opacity 0.25s; /* добавляем для плавного перехода */
+}
+.modal__wrapper { /* блок обертка для центрирования контентной части модального окна */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.modal__body { /* еще один блок обертка для возможности прокрутки контента, если модальное окно не помещается по высоты */
+  overflow-y: auto; /* добавляем полосу прокрутки при недостаточной высоте */
+  position: relative;
+  margin: 0 24px; /* боковые отступы для мобильных экранов */
+  max-height: 100%;
+  max-width: 380px;
+  -ms-overflow-style: none; /* скрываем полосу прокрутки */
+  scrollbar-width: none; /* скрываем полосу прокрутки */
+}
+.modal__body::-webkit-scrollbar { /* скрываем полосу прокрутки */
+  display: none;
+}
+.modal__inner { /* стилизуем контентную часть */
+  display: flex;
+  flex-direction: column;
+  background: $light_bg_blue_color;
+  width: 100%;
+  height: 100%;
+  padding: 64px 24px;
+  align-items: center;
+  text-align: center;
+  color: $text_color;
+  @include thick_border_blue;
+  @include border-radius;
+  position: relative;
+  margin: 24px 0; /* отступы сверху и снизу, чтобы контентная часть модального окна не прилипала к границам браузера при недостаточной высоте */
+}
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  @include text;
+}
+.modal__title {
+  margin-bottom: 24px;
+  @include big_bold_text;
+}
+.modal__text {
+  @include text;
+}
 
 
 /* Work presentations */
