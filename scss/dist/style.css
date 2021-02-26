@@ -445,7 +445,7 @@ body {
   background-position: 0 0, 30px 30px;
 }
 .action .row {
-  margin-right: 0;
+  --bs-gutter-x: 0;
 }
 @media (max-width: 576px) {
   .action {
@@ -622,6 +622,9 @@ body {
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
 }
+.work-preview .row {
+  --bs-gutter-x: 0;
+}
 
 .work-description {
   max-width: 588px;
@@ -636,6 +639,7 @@ body {
 }
 
 .work-photo {
+  width: 100%;
   border: 6px solid #ACC8E5;
   border-radius: 50px;
 }

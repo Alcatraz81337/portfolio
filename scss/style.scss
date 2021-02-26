@@ -421,7 +421,7 @@ border: 3px solid $text_color;
   background-color: $bg_blue_color;
   @include bg_pattern_light;
   .row {
-    margin-right: 0;
+     --bs-gutter-x: 0;
   }
   @media (max-width: 576px) {
     padding-bottom: 0;
@@ -551,6 +551,9 @@ animation: fadeInUp;
 .work-preview {
   background-color: $light_bg_blue_color;
   @include bg_pattern;
+  .row {
+    --bs-gutter-x: 0;
+  }
 }
 .work-description {
   max-width: 588px;
@@ -562,6 +565,7 @@ animation: fadeInUp;
   }
 }
 .work-photo {
+  width: 100%;
   @include thick_border_blue;
   @include border-radius;
   @media (max-width: 576px) {

@@ -536,7 +536,7 @@ body {
 }
 
 .action .row {
-  margin-right: 0;
+  --bs-gutter-x: 0;
 }
 
 @media (max-width: 576px) {
@@ -742,6 +742,10 @@ body {
   background-position: 0 0,30px 30px;
 }
 
+.work-preview .row {
+  --bs-gutter-x: 0;
+}
+
 .work-description {
   max-width: 588px;
   border: 6px solid #ACC8E5;
@@ -756,7 +760,7 @@ body {
 }
 
 .work-photo {
-  max-width: 588px;
+  width: 100%;
   border: 6px solid #ACC8E5;
   border-radius: 50px;
 }
