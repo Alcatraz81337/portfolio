@@ -551,9 +551,6 @@ animation: fadeInUp;
 .work-preview {
   background-color: $light_bg_blue_color;
   @include bg_pattern;
-  .row {
-    --bs-gutter-x: 0;
-  }
 }
 .work-description {
   max-width: 588px;
@@ -596,6 +593,13 @@ table {
   h2 { @include title; } 
   h3 { @include big_bold_text; }
 }
+.stage-img {
+  width: 100%;
+  @include border-radius;
+  @media (max-width: 576px) {
+    display: none;
+  }
+}
 .stage {
   background-color: $light_bg_blue_color;
   border-radius: 0px 50px 0px 0px;
@@ -613,8 +617,8 @@ table {
 }
 .return {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 2rem;
+  right: 3rem;
   text-decoration: none;
   color: $text_color;
   background-color: $light_bg_blue_color;
@@ -627,6 +631,9 @@ table {
     }
   @media (max-width: 576px) {
     position: relative;
+    margin-top: 2rem;
+    bottom: 0;
+    right: 0;
     margin-right: 0;
   }
 }

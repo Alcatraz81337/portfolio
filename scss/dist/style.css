@@ -622,9 +622,6 @@ body {
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
 }
-.work-preview .row {
-  --bs-gutter-x: 0;
-}
 
 .work-description {
   max-width: 588px;
@@ -694,6 +691,16 @@ table a:hover {
   font-size: 1.25rem;
 }
 
+.stage-img {
+  width: 100%;
+  border-radius: 50px;
+}
+@media (max-width: 576px) {
+  .stage-img {
+    display: none;
+  }
+}
+
 .stage {
   background-color: #F3F7FB;
   border-radius: 0px 50px 0px 0px;
@@ -724,8 +731,8 @@ table a:hover {
 
 .return {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 2rem;
+  right: 3rem;
   text-decoration: none;
   color: #112A46;
   background-color: #F3F7FB;
@@ -742,6 +749,9 @@ table a:hover {
 @media (max-width: 576px) {
   .return {
     position: relative;
+    margin-top: 2rem;
+    bottom: 0;
+    right: 0;
     margin-right: 0;
   }
 }
