@@ -263,12 +263,16 @@ border: 3px solid $text_color;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   background-color: $light_bg_blue_color;
   max-width: 280px;
   @include thick_border_blue;
   @include border-radius;
   h4 {
     @include bold_text;
+  }
+  @media (max-width: 576px) {
+    text-align: center;
   }
 }
 .stage-goal-finished {
@@ -345,7 +349,7 @@ border: 3px solid $text_color;
 .works {
   padding: 5rem;
   @media (max-width: 576px) {
-    padding: 3rem;
+    padding: 2rem;
     justify-content: center;
   }
 }
@@ -403,8 +407,11 @@ border: 3px solid $text_color;
 .info-block {
   flex-basis: 40%;
   background-color: $violet_color;
+  justify-content: center;
+  align-items: center;
   @include border-radius;
   p {
+    margin: 0;
     color: $light_violet_color;
     @include text;
     &::selection {

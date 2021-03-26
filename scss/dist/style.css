@@ -218,6 +218,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   background-color: #F3F7FB;
   max-width: 280px;
   border: 6px solid #ACC8E5;
@@ -229,6 +230,11 @@ body {
   font-weight: bold;
   line-height: 160%;
   font-size: 1.125rem;
+}
+@media (max-width: 576px) {
+  .stage-goal {
+    text-align: center;
+  }
 }
 
 .stage-goal-finished {
@@ -337,7 +343,7 @@ body {
 }
 @media (max-width: 576px) {
   .works {
-    padding: 3rem;
+    padding: 2rem;
     justify-content: center;
   }
 }
@@ -418,9 +424,12 @@ body {
 .info-block {
   flex-basis: 40%;
   background-color: #861FE0;
+  justify-content: center;
+  align-items: center;
   border-radius: 50px;
 }
 .info-block p {
+  margin: 0;
   color: #F8F2FD;
   font-family: "IBM Plex Sans", sans-serif;
   line-height: 160%;
