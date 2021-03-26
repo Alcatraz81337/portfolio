@@ -92,7 +92,12 @@ $work-sphere: #FFFFFF;
   line-height: 160%;
   font-size: 1.125rem;
 }
-
+@mixin small_text {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-size: 0.875rem;
+  line-height: 160%;
+}
 
 h1::selection,
 h2::selection,
@@ -347,7 +352,7 @@ border: 3px solid $text_color;
   @include text;
 }
 .works {
-  padding: 5rem;
+  padding: 3rem;
   @media (max-width: 576px) {
     padding: 2rem;
     justify-content: center;
@@ -582,7 +587,8 @@ animation: fadeInUp;
 }
 table {
   @include text;
-  a {
+}
+.project-link {
     text-decoration: none;
     border-bottom: 1px solid $violet_color;
     color: $violet_color;
@@ -591,7 +597,6 @@ table {
       border-bottom-color: $link_hover_color;
     }
   }
-}
 .stages {
   position: relative;
 }
@@ -600,12 +605,18 @@ table {
   h2 { @include title; } 
   h3 { @include big_bold_text; }
 }
+.stage-show {
+  margin-bottom: 3rem;
+  border-radius: 50px 0px 0px 0px;
+  background-color: $light_bg_blue_color;
+  p { @include small_text; }
+}
 .stage-img {
   width: 100%;
-  @include border-radius;
-  @media (max-width: 576px) {
-    display: none;
-  }
+  border-radius: 50px 0 0 0;
+}
+.photo-subtext {
+  margin: 0;
 }
 .stage {
   background-color: $light_bg_blue_color;
@@ -637,6 +648,7 @@ table {
     background-color: $light_bg_hover;
     }
   @media (max-width: 576px) {
+    display: inline-block;
     position: relative;
     margin-top: 2rem;
     bottom: 0;

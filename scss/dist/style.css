@@ -339,7 +339,7 @@ body {
 }
 
 .works {
-  padding: 5rem;
+  padding: 3rem;
 }
 @media (max-width: 576px) {
   .works {
@@ -669,12 +669,13 @@ table {
   line-height: 160%;
   font-size: 1.125rem;
 }
-table a {
+
+.project-link {
   text-decoration: none;
   border-bottom: 1px solid #861FE0;
   color: #861FE0;
 }
-table a:hover {
+.project-link:hover {
   color: #6B19B3;
   border-bottom-color: #6B19B3;
 }
@@ -700,14 +701,25 @@ table a:hover {
   font-size: 1.25rem;
 }
 
+.stage-show {
+  margin-bottom: 3rem;
+  border-radius: 50px 0px 0px 0px;
+  background-color: #F3F7FB;
+}
+.stage-show p {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-size: 0.875rem;
+  line-height: 160%;
+}
+
 .stage-img {
   width: 100%;
-  border-radius: 50px;
+  border-radius: 50px 0 0 0;
 }
-@media (max-width: 576px) {
-  .stage-img {
-    display: none;
-  }
+
+.photo-subtext {
+  margin: 0;
 }
 
 .stage {
@@ -757,6 +769,7 @@ table a:hover {
 }
 @media (max-width: 576px) {
   .return {
+    display: inline-block;
     position: relative;
     margin-top: 2rem;
     bottom: 0;
